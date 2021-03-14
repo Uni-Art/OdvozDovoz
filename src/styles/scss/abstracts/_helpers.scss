@@ -1,0 +1,24 @@
+.hidden,
+.is-hidden {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.margin-top {
+	margin-top: 30px;
+
+	@media screen and (min-width: $media-query-medium) {
+		margin-top: 50px;
+	}
+}
+
+.margin-bottom {
+	margin-bottom: 30px;
+
+	@media screen and (min-width: $media-query-medium) {
+		margin-bottom: 50px;
+	}
+}

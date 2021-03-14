@@ -1,0 +1,33 @@
+button {
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
+}
+.button {
+	padding: 17px 30px 13px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: 700;
+	font-size: rem(18);
+	line-height: rem(30);
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+	cursor: pointer;
+
+	&--primary {
+		@include button-primary;
+	}
+
+	&--secondary {
+		@include button-secondary;
+	}
+
+	&--clean {
+		@include button-clean;
+	}
+}

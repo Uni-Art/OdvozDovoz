@@ -1,0 +1,56 @@
+.intro {
+	@include section-global;
+	height: 100vh;
+	max-height: 670px;
+	background: url("./images/bg_01.jpg") bottom right no-repeat;
+	background-size: cover;
+
+	&__container {
+		height: 100vh;
+		max-height: 670px;
+	}
+
+	&__title-box {
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		bottom: calc(50vh - 80px);
+
+		@media screen and (min-width: $media-query-large) {
+			bottom: calc(40vh - 80px);
+		}
+	}
+
+	&__title {
+		display: inline-block;
+		font-weight: 900;
+		font-size: rem(36);
+		padding: 10px;
+		background: rgb($color-darknest, 0.7);
+		color: $color-light;
+
+		@media screen and (min-width: $media-query-medium) {
+			font-size: rem(60);
+			line-height: rem(60);
+		}
+	}
+
+	&__subtitle {
+		display: block;
+		font-weight: 400;
+		font-size: rem(24);
+		padding: 10px;
+		background: rgb($color-darknest, 0.6);
+		color: $color-light;
+		margin-top: 10px;
+	}
+
+	&__title,
+	&__subtitle {
+		@media screen and (min-width: $media-query-medium) {
+			display: inline-block;
+			width: 476px;
+			margin-right: calc(100% - 476px);
+		}
+	}
+}

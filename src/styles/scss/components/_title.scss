@@ -1,0 +1,11 @@
+.title {
+	margin-bottom: 30px;
+
+	@media screen and (min-width: $media-query-large) {
+		margin-bottom: 50px;
+	}
+
+	&--center {
+		text-align: center;
+	}
+}

@@ -1,0 +1,36 @@
+.modal-body,
+.modal-body-dark {
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		position: fixed;
+		display: block;
+		content: '';
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-color: rgba($color-light, 0.6);
+		z-index: 10;
+	}
+
+	&:before {
+		@include animation(fadeIn $time $ease);
+
+		@include transition(opacity $ease $time);
+	}
+
+	&.modal-fadeOut {
+		&:before {
+			opacity: 0;
+			@include animation(fadeOut $time $ease);
+		}
+	}
+}
+
+.modal-body-dark {
+	&:before {
+		background-color: rgba($color-darknest, 0.79);
+	}
+}

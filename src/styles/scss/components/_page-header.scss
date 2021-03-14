@@ -1,0 +1,231 @@
+.page-header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $color-light;
+	color: $color-dark;
+	z-index: 10;
+	box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+
+	&__logo-wrapper {
+		display: flex;
+		align-items: center;
+		height: 45px;
+
+		@media screen and (min-width: $media-query-medium) {
+			height: 80px;
+		}
+	}
+
+	&__logo {
+		@media screen and (min-width: $media-query-medium) {
+			margin-right: 30px;
+		}
+	}
+
+	&__logo-image {
+		width: 58px;
+		height: 38px;
+
+		@media screen and (min-width: $media-query-medium) {
+			width: 69px;
+			height: 45px;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		height: 100%;
+		min-height: 45px;
+		align-items: center;
+
+		@media screen and (min-width: $media-query-medium) {
+			min-height: 80px;
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		@media screen and (min-width: $media-query-medium) {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__nav-list {
+		display: none;
+		flex-flow: column;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		list-style: none;
+		@include transition(width 0.3s ease-in-out);
+
+		&--open {
+			display: flex;
+			opacity: 1;
+			padding: 40px 10px 50px;
+
+			.page-header__nav-item {
+				margin-bottom: 10px;
+			}
+
+			@media screen and (min-width: $media-query-medium) {
+				padding: 0;
+
+				.page-header__nav-item {
+					margin-bottom: 0;
+				}
+			}
+
+		}
+
+		@media screen and (min-width: $media-query-medium) {
+			display: flex;
+			flex-flow: row;
+		}
+	}
+
+	&__nav-item {
+		padding: 0 10px;
+
+		&--button {
+			margin-left: auto;
+			padding-right: 0;
+			margin-bottom: 0;
+			display: none;
+
+			@media screen and (min-width: $media-query-medium) {
+				display: block;
+			}
+
+			.page-header__button-link {
+				@media screen and (min-width: $media-query-medium) {
+					display: flex;
+				}
+			}
+		}
+
+		&--right {
+			@media screen and (min-width: $media-query-medium) {
+				margin-left: auto;
+			}
+		}
+	}
+
+	&__nav-link {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: rem(30);
+		color: $color-dark;
+		text-decoration: none;
+
+		&:hover {
+			color: $color-hightlight;
+		}
+	}
+
+	&__nav-btn {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__btn-icon-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		background: $color-dark;
+		width: 48px;
+		height: 48px;
+	}
+
+	&__btn-icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	&__btn-text {
+		margin-left: 15px;
+	}
+
+	&__button-hamburger {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 45px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		outline: 0;
+		margin-left: auto;
+
+		@media screen and (min-width: $media-query-medium) {
+			width: 97px;
+			height: 80px;
+		}
+
+		.icon-bar-1,
+		.icon-bar-2,
+		.icon-bar-3 {
+			display: inline-block;
+			width: 20px;
+			height: 3px;
+			background-color: $color-hightlight;
+			margin-bottom: 4px;
+			transition: 0.4s;
+
+			@media screen and (min-width: $media-query-medium) {
+				width: 37px;
+				height: 5px;
+				margin-bottom: 7px;
+			}
+		}
+
+		.icon-bar-3 {
+			margin-bottom: 0;
+		}
+
+		&--close {
+			.icon-bar-1 {
+				margin: 0;
+				-webkit-transform: rotate(-45deg) translate(-3.5px, 3.5px);
+				transform: rotate(-45deg) translate(-3.5px, 3.5px);
+
+				@media screen and (min-width: $media-query-medium) {
+					width: 32px;
+					-webkit-transform: rotate(-45deg) translate(-6px, 6px);
+					transform: rotate(-45deg) translate(-6px, 6px);
+				}
+			}
+
+			.icon-bar-2 {
+				opacity: 0;
+			}
+
+			.icon-bar-3 {
+				margin: 0;
+				-webkit-transform: rotate(45deg) translate(-3.5px, -3.5px);
+				transform: rotate(45deg) translate(-3.5px, -3.5px);
+
+				@media screen and (min-width: $media-query-medium) {
+					width: 32px;
+					-webkit-transform: rotate(45deg) translate(-6px, -6px);
+					transform: rotate(45deg) translate(-6px, -6px);
+				}
+			}
+		}
+
+		@media screen and (min-width: $media-query-medium) {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.content-list {
+	margin: 0;
+	padding: 0;
+
+	&__item {
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&--arrow {
+
+		.content-list__item {
+			position: relative;
+			padding-left: 20px;
+			margin-bottom: 20px;
+
+			&:before {
+				position: absolute;
+				top: 10px;
+				left: 0;
+				display: block;
+				content: '';
+				border: solid $color-hightlight;
+				border-width: 0 2px 2px 0;
+				padding: 2px;
+				@include transform(rotate(-45deg));
+				@include transition(transform 0.3s ease-in-out);
+
+			}
+		}
+	}
+}
